@@ -1,0 +1,8 @@
+<div class="dbs-menu">
+  <mat-list>
+    <mat-list-item class="dbs-menu__item" *ngFor="let item of menu" [ngClass]="{'active': item?.active}">
+      <mat-icon mat-list-icon class="dbs-menu__item-icon">{{ item.icon }}</mat-icon>
+      <p mat-line class="dbs-menu__item-text">{{ item.text }}</p>
+    </mat-list-item>
+  </mat-list>
+</div>

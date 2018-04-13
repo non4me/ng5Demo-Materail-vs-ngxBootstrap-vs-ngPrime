@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+$csas-app-primary: mat-palette($mat-blue, 800);
+$csas-app-accent:  mat-palette($mat-blue, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$csas-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$csas-app-theme: mat-light-theme($csas-app-primary, $csas-app-accent, $csas-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($csas-app-theme);
+
+
+@import "./datepicker";
+@import "./form";
+
+button.mat-button {
+  border-radius: initial;
+}

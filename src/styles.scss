@@ -1,0 +1,17 @@
+@import "assets/styles/csas.palette";
+
+@import "assets/mat-styles/csas.theme";
+@import "assets/prime-styles/csas.theme";
+@import "assets/ngx-bootstrap/csas.theme";
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(238, 247, 251, 1);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10pt;
+}
+
+

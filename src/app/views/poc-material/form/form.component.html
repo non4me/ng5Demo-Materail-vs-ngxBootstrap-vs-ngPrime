@@ -1,0 +1,186 @@
+<div class="dbs-form">
+  <form novalidate [formGroup]="searchForm" [ngClass]="{'submitted': submitted}" autocomplete="off">
+    <div fxLayout="row" fxLayoutGap="45px">
+      <div fxLayout="column" fxFlex="50">
+
+        <!-- Transactions -->
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div fxFlex="30">
+            <label for="transactions">Typy transakcí</label>
+          </div>
+          <div fxFlex="70">
+            <mat-form-field fxFill>
+              <mat-select id="transactions" aria-labelledby="transactionslabel" formControlName="transactions" ngDefaultControl>
+                <mat-option *ngFor="let transacton of transactions" [value]="transacton.value">
+                  {{ transacton.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Period -->
+        <div formGroupName="period">
+          <mat-radio-group formControlName="type">
+            <strong class="dbs-form__period-title">Období</strong>
+            <div fxLayout="row" fxLayoutGap="10px">
+
+              <div fxFlex="30">
+                <mat-radio-button id="lastDays" value="lastDays">Posledních dni</mat-radio-button>
+              </div>
+              <div fxFlex="70">
+                <mat-form-field fxFlex="50">
+                  <input type="number" matInput formControlName="lastDays">
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="10px">
+              <div fxFlex="30">
+                <mat-radio-button id="month" value="month">Měsíc kalendářní</mat-radio-button>
+              </div>
+              <div fxFlex="70">
+                <mat-form-field fxFill>
+                  <input type="text" matInput formControlName="month">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="10px" formGroupName="timePeriod">
+              <div fxFlex="30">
+                <mat-radio-button value="period">Období</mat-radio-button>
+              </div>
+              <div fxFlex="70" fxLayout="row" fxLayoutGap="10px">
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Od"formControlName="from">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" placeholder="Do"formControlName="to">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+
+            <div fxLayout="row wrap" fxLayoutGap="5px">
+              <div fxFlex="30">
+                <mat-radio-button value="today">Dnes</mat-radio-button>
+              </div>
+              <div fxFlex="70"></div>
+            </div>
+          </mat-radio-group>
+
+        </div>
+      </div>
+
+      <div fxLayout="column" fxFlex="50">
+
+        <!-- Account -->
+        <div fxLayout="row" fxLayoutGap="10px" formGroupName="account">
+          <div fxFlex="15">
+            <label for="number">Číslo účtu</label>
+          </div>
+          <div fxFlex="85" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="70">
+              <mat-form-field fxFill>
+                <input matInput type="text"
+                       id="number"
+                       placeholder="Zadejte číslo účtu (000123-3456789897/0800)"
+                       formControlName="number">
+              </mat-form-field>
+            </div>
+            <div fxFlex="30">
+              <mat-form-field fxFill>
+                <!--<mat-select id="bankCode" formControlName="bankCode" placeholder="Kód banky">-->
+                  <!--<mat-option *ngFor="let code of bankCodes" [value]="code.code">-->
+                    <!--{{ code.name }}-->
+                  <!--</mat-option>-->
+                <!--</mat-select>-->
+
+                <input matInput [matAutocomplete]="auto" formControlName="bankCode" placeholder="Kód banky">
+                <mat-autocomplete #auto="matAutocomplete"
+                                  [displayWith]="displayWith"
+                                  [class]="'csas'"
+                                  [autoActiveFirstOption]="true">
+                  <mat-option *ngFor="let code of filteredBankCodes | async" [value]="code.code">
+                    <small>{{ code.name }}</small>
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Amount -->
+        <div fxLayout="row" fxLayoutGap="10px" formGroupName="amount">
+          <div fxFlex="15">
+            <label for="from">Částka</label>
+          </div>
+          <div fxFlex="85" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="70" fxLayout="row" fxLayoutGap="10px">
+              <div fxFlex="50">
+                <mat-form-field fxFill>
+                  <input matInput type="text"
+                         id="from"
+                         placeholder="Od"
+                         formControlName="from">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50">
+                <mat-form-field fxFill>
+                  <input matInput type="text"
+                         id="to"
+                         placeholder="Do"
+                         formControlName="to">
+                </mat-form-field>
+              </div>
+
+            </div>
+            <div fxFlex="30">
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- VS -->
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div fxFlex="15">
+            <label for="vs">VS</label>
+          </div>
+          <div fxFlex="85" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="70" fxLayout="row" fxLayoutGap="10px">
+              <div fxFlex="50">
+                <mat-form-field fxFill>
+                  <input matInput type="text"
+                         id="vs"
+                         formControlName="vs">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50"></div>
+
+            </div>
+            <div fxFlex="30"></div>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxFlexAlign="end">
+          <button mat-raised-button color="primary" (click)="submitForm()"
+                  class="dbs-form__search-button">
+            <mat-icon>search</mat-icon>
+            Vyhledat
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

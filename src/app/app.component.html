@@ -1,0 +1,21 @@
+<div class="app">
+  <nav  fxLayout="row wrap" fxLayoutGap="20px" class="app__nav">
+    <img src="assets/img/logo1.png" width="30" height="30">
+    <a [routerLink]="['material']" routerLinkActive="active">Material2</a>
+    <a [routerLink]="['ngxbootstrap']" routerLinkActive="active">ngxBoostrap</a>
+    <a [routerLink]="['prime']" routerLinkActive="active">PrimeNg</a>
+  </nav>
+
+  <div fxFlexFill>
+    <div class="app__side"  fxFlex></div>
+    <div class="app__content"  fxFlex="90">
+
+      <router-outlet></router-outlet>
+
+    </div>
+    <div class="side" fxFlex ></div>
+  </div>
+
+</div>
+
+

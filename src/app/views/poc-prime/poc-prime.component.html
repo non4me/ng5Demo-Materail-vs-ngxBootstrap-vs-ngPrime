@@ -1,0 +1,57 @@
+<div class="poc-prime" fxLayout="row" fxLayoutGap="50px">
+  <div fxFlex="20">
+    <dbs-menu></dbs-menu>
+    <p-button label="Open modal"
+              class="poc-prime__open-button"
+              styleClass="ui-button-secondary"
+              icon="fa fa-external-link-alt"
+              iconPos="left"
+              (click)="openDialog()"></p-button>
+    <p>{{ modalResult }}</p>
+  </div>
+  <div fxFlex="80" fxLayout="column">
+    <div fxLayout="row" class="poc-prime__content-header">
+      <div fxFlex="20" class="poc-prime__content-header--title" fxLayout="row">
+        <div>
+          <i class="fa fa-lg fa-history"></i>
+        </div>
+        <div class="poc-prime__icon-text">
+          <strong>Transakční historie</strong>
+        </div>
+      </div>
+      <div class="poc-prime__button-row" fxFlex="80" fxLayoutAlign="end" fxLayoutGap="10px">
+        <button pButton type="button" class="csas-button-secondary" label="Tran. historie"></button>
+        <button pButton type="button" class="csas-button-info" label="Výpis obratů"></button>
+        <button pButton type="button" class="csas-button-secondary" label="Info o plateb. transa..."></button>
+      </div>
+
+    </div>
+    <div class="poc-prime__content-subheader">
+      <span><strong>Vyhledávání plateb</strong></span>
+    </div>
+    <div fxLayout="column">
+      <div>
+        <dbs-form (formUpdated)="formUpdated($event)"></dbs-form>
+      </div>
+
+      <div class="poc-prime__info-box">
+        <div fxLayout="row">
+          <div>
+            <i class="fa fa-lg fa-info-circle"></i>
+          </div>
+          <div class="poc-prime__icon-text">
+            <strong>Informace o výpise obratu</strong>
+          </div>
+        </div>
+
+        <pre>
+{{ searchObject }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-dialog [(visible)]="display" [modal]="true" header="Custom modal" [closable]="true">
+  <dbs-custom-modal [parent]="this" [open]="display" [name]="name" (modalClose)="formUpdated($event)"></dbs-custom-modal>
+</p-dialog>

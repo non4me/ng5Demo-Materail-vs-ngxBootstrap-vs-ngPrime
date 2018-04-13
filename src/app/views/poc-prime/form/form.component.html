@@ -1,0 +1,191 @@
+<div class="dbs-form">
+  <form novalidate [formGroup]="searchForm" [ngClass]="{'submitted': submitted}" autocomplete="off">
+    <div fxLayout="row" fxLayoutGap="45px">
+      <div fxLayout="column" fxFlex="50" fxLayoutGap="10px">
+
+        <!-- Transactions -->
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div fxFlex="30">
+            <label for="transactions">Typy transakcí</label>
+          </div>
+          <div fxFlex="70">
+            <div class="ui-inputgroup">
+              <p-dropdown [options]="transactions"
+                          id="transactions"
+                          placeholder="Všechny"
+                          optionLabel="name"
+                          [showClear]="true"
+                          formControlName="transactions">
+              </p-dropdown>
+            </div>
+          </div>
+        </div>
+
+        <!-- Period -->
+        <div formGroupName="period" fxLayout="column" fxLayoutGap="10px">
+          <strong class="dbs-form__period-title">Období</strong>
+          <div fxLayout="row" fxLayoutGap="10px">
+
+            <div fxFlex="30">
+              <p-radioButton name="period"
+                             id="lastDays"
+                             value="lastDays"
+                             formControlName="type"
+                             label="Posledních dni"></p-radioButton>
+            </div>
+            <div fxFlex="70">
+              <div class="ui-inputgroup" fxFlex="50">
+                <p-spinner formControlName="lastDays"></p-spinner>
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="30">
+              <p-radioButton name="period"
+                             id="month"
+                             value="month"
+                             formControlName="type"
+                             label="Měsíc kalendářní"></p-radioButton>
+            </div>
+            <div fxFlex="70">
+              <div class="ui-inputgroup" fxFill>
+                <input pInputText type="text" formControlName="month">
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="30">
+              <p-radioButton name="period"
+                             value="period"
+                             formControlName="type"
+                             label="Období"></p-radioButton>
+            </div>
+            <div fxFlex="70" fxLayout="row" fxLayoutGap="10px" formGroupName="timePeriod">
+              <div fxFlex="50">
+                <div class="ui-inputgroup">
+                  <p-calendar formControlName="from"
+                              [showOnFocus]="false"
+                              [monthNavigator]="true"
+                              [yearNavigator]="true"
+                              yearRange="1900:2050"
+                              [showIcon]="true"
+                              [locale]="locale"
+                              dateFormat="dd.mm.yy"
+                              placeholder="Od"></p-calendar>
+                </div>
+              </div>
+
+              <div fxFlex="50">
+                <div class="ui-inputgroup">
+                  <p-calendar formControlName="to"
+                              [showOnFocus]="false"
+                              [monthNavigator]="true"
+                              [yearNavigator]="true"
+                              yearRange="1900:2050"
+                              [showIcon]="true"
+                              [locale]="locale"
+                              dateFormat="dd.mm.yy"
+                              placeholder="Od"></p-calendar>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div fxLayout="row wrap" fxLayoutGap="5px">
+            <div fxFlex="30">
+              <p-radioButton name="period"
+                             value="today"
+                             formControlName="type"
+                             label="Dnes"></p-radioButton>
+            </div>
+            <div fxFlex="70"></div>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxFlex="50" fxLayoutGap="10px">
+
+        <!-- Account -->
+        <div fxLayout="row" fxLayoutGap="10px" formGroupName="account">
+          <div fxFlex="15">
+            <label for="number">Číslo účtu</label>
+          </div>
+          <div fxFlex="85" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="70">
+              <div class="ui-inputgroup" fxFill>
+                <input pInputText type="text"
+                       id="number"
+                       placeholder="Zadejte číslo účtu (000123-3456789897/0800)"
+                       formControlName="number">
+              </div>
+            </div>
+            <div fxFlex="30">
+              <div class="ui-inputgroup">
+                <p-autoComplete [suggestions]="filteredBankCodes"
+                                (completeMethod)="filterBankCodes($event)"
+                                [autoHighlight]="true"
+                                [dropdown]="true"
+                                [minLength]="0"
+                                field="code"
+                                formControlName="bankCode">
+                  <ng-template let-brand pTemplate="item" style="">
+                    <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+                      <div>{{ brand.name }}</div>
+                    </div>
+                  </ng-template>
+                </p-autoComplete>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amount -->
+        <div fxLayout="row" fxLayoutGap="10px" formGroupName="amount">
+          <div fxFlex="15">
+            <label for="from">Částka</label>
+          </div>
+          <div fxFlex="85" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="70" fxLayout="row" fxLayoutGap="10px">
+              <div fxFlex="50">
+                <input pInputText type="text" id="from" placeholder="Od" formControlName="from">
+              </div>
+              <div fxFlex="50">
+                <input pInputText type="text" id="to" placeholder="Do" formControlName="to">
+              </div>
+            </div>
+            <div fxFlex="30"></div>
+          </div>
+        </div>
+
+        <!-- VS -->
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div fxFlex="15">
+            <label for="vs">VS</label>
+          </div>
+          <div fxFlex="85" fxLayout="row" fxLayoutGap="10px">
+            <div fxFlex="70" fxLayout="row" fxLayoutGap="10px">
+              <div fxFlex="50">
+                <div class="ui-inputgroup" fxFill>
+                  <input pInputText type="text" id="vs" formControlName="vs">
+                </div>
+              </div>
+              <div fxFlex="50"></div>
+            </div>
+            <div fxFlex="30"></div>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxFlexAlign="end">
+          <button pButton type="button"
+                  icon="fa fa-search"
+                  (click)="submitForm()"
+                  label="Vyhledat"
+                  class="dbs-form__search-button">
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

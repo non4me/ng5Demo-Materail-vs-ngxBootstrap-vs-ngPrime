@@ -1,0 +1,24 @@
+:host {
+  .app {
+    height: 100%;
+
+    .active {
+      font-weight: 700;
+    }
+
+    &__nav {
+      background: rgba(53, 130, 185, 1);
+      color: #FFFFFF;
+      padding: 20px;
+
+      a {
+        color: #FFFFFF;
+      }
+    }
+
+    &__content {
+      max-width: 824px;
+    }
+
+  }
+}

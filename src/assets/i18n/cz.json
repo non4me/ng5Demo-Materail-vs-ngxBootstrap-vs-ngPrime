@@ -1,0 +1,24 @@
+{
+  "COMMON": {
+    "BACK": "Zpět",
+    "BUTTONS": {
+      "ACTUAL": "Aktuální"
+    }
+  },
+  "HEADER": {
+    "PERSONAL_ACCOUNT": "Osobní účet",
+    "ACCOUNT_OWNER": "Majitel účtu",
+    "PAYMENT_ORDER": "Příkaz k úhradě",
+    "DIRECT_ORDER": "Příkaz k inkasu",
+    "SIPO_ORDER": "Příkaz k SIPO",
+    "STANDING_ORDER": "Trvalý příkaz k úhradě",
+    "REQUIREMENTS": "Požadavky"
+  },
+  "NAVIGATION": {
+    "GENERAL_INFO": "Základní informace",
+    "INTEREST_RATES": "Úrokové sazby",
+    "ACCOUNT_RESTRICTIONS": "Poplatky od počátku měsíce",
+    "FEES_OF_THE_MONTH": "Omezení na účtu",
+    "EXECUTION_AND_ZTR": "Exekuce a ZTR"
+  }
+}

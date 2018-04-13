@@ -1,0 +1,12 @@
+<div class="custom-modal">
+  <p mat-dialog-title>Hi {{ data.name }}</p>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.animal" placeholder="Send data to controller">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+:host {
+    .dbs-menu {
+      &__item {
+        padding: 10px 20px;
+        border-bottom: 1px solid #2577B1;
+        color: #2577B1;
+        cursor: pointer;
+  
+        &-icon {
+          display: inline-block;
+          width: 30px;
+          text-align: center;
+  
+          i {
+            vertical-align: bottom;
+            display: inline-block;
+            margin-right: 10px;
+            height: 16px;
+          }
+        }
+  
+        &-text {
+          display: inline-block;
+          font-size: larger;
+        }
+  
+        &.active {
+          color: #FFFFFF;
+          background-color: #2577B1;
+          cursor: default;
+  
+          &:hover {
+            background-color: #2577B1;
+          }
+        }
+  
+        &:hover {
+          background-color: rgba(54, 117, 175, 0.13);
+        }
+      }
+    }
+  }
+  

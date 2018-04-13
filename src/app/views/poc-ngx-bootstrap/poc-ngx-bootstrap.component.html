@@ -1,0 +1,52 @@
+<div class="poc-ngx-bootstrap" fxLayout="row" fxLayoutGap="50px">
+  <div fxFlex="20">
+    <dbs-menu></dbs-menu>
+    <button type="button"
+            class="btn btn-primary open-modal"
+            (click)="openDialog()">
+      Open modal
+    </button>
+    <p>{{ modalResult }}</p>
+  </div>
+  <div fxFlex="80" fxLayout="column">
+    <div fxLayout="row" class="poc-ngx-bootstrap__content-header">
+      <div fxFlex="20" class="poc-ngx-bootstrap__content-header--title" fxLayout="row">
+        <div>
+          <i class="fa fa-lg fa-history"></i>
+        </div>
+        <div class="poc-ngx-bootstrap__icon-text">
+          <strong>Transakční historie</strong>
+        </div>
+      </div>
+      <div class="poc-ngx-bootstrap__button-row" fxFlex="80" fxLayoutAlign="end" fxLayoutGap="10px">
+        <button type="button" class="btn btn-secondary">Tran. historie</button>
+        <button type="button" class="btn btn-primary">Výpis obratů</button>
+        <button type="button" class="btn btn-secondary">Info o plateb. transa...</button>
+      </div>
+
+    </div>
+    <div class="poc-ngx-bootstrap__content-subheader">
+      <span><strong>Vyhledávání plateb</strong></span>
+    </div>
+    <div fxLayout="column">
+      <div>
+        <dbs-form (formUpdated)="formUpdated($event)"></dbs-form>
+      </div>
+
+      <div class="poc-ngx-bootstrap__info-box">
+        <div fxLayout="row">
+          <div>
+            <i class="fa fa-lg fa-info-circle"></i>
+          </div>
+          <div class="poc-ngx-bootstrap__icon-text">
+            <strong>Informace o výpise obratu</strong>
+          </div>
+        </div>
+
+        <pre>
+{{ searchObject }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

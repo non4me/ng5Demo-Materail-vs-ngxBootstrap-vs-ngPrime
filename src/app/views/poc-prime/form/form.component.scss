@@ -1,0 +1,73 @@
+:host /deep/ {
+  .dbs-form {
+    padding-top: 20px;
+
+    &__period-title {
+      display: inline-block;
+      padding-bottom: 10px;
+      padding-top: 25px;
+    }
+
+    &__search-button {
+      margin-top: 90px;
+      background: #2577B1;
+      padding: 3px;
+    }
+
+    label {
+      vertical-align: sub;
+    }
+
+    input, .ui-inputgroup, .mat-form-field-infix {
+      width: 100%;
+    }
+
+    p-dropdown, div.ui-dropdown {
+      width: 100% !important;
+
+      .ui-dropdown-item {
+        white-space: nowrap;
+      }
+    }
+
+    input[formcontrolname] {
+      border: 1px solid #aed0ea;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .ui-datepicker-trigger {
+      position: absolute;
+      margin-left: -27px;
+    }
+
+    .ui-datepicker-header {
+      background: #2577B1;
+      color: #ececec;
+
+      .ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+        background: #2577B1;
+        color: #ffffff;
+      }
+    }
+
+    .ui-autocomplete {
+      .ui-autocomplete-panel {
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left: -85px;
+        text-overflow: ellipsis;
+        width: 200px !important;
+
+        .ui-autocomplete-list-item div {
+          border: none !important;
+        }
+      }
+
+      .ui-autocomplete-dropdown {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}

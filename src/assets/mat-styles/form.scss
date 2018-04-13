@@ -1,0 +1,28 @@
+mat-form-field {
+  .mat-form-field-infix {
+    border: none;
+    border-left: 3px solid #fff;
+    background: #FFFFFF;
+    width: 130px;
+  }
+
+  .mat-input-suffix {
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0.95em;
+
+    .mat-form-field-underline {
+      bottom: 0.95em;
+    }
+  }
+}
+
+.cdk-overlay-container {
+  .mat-autocomplete-panel.csas {
+    width: 250px;
+    margin-left: -135px;
+  }
+}

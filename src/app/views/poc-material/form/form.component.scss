@@ -1,0 +1,28 @@
+:host /deep/ {
+  .dbs-form {
+    padding-top: 20px;
+
+    &__period-title {
+      display: inline-block;
+      padding-bottom: 10px;
+      padding-top: 25px;
+    }
+
+    &__search-button{
+      margin-top: 75px;
+      background: #2577B1;
+    }
+
+    label {
+      vertical-align: sub;
+    }
+
+    .mat-form-field-infix {
+      width: 100%;
+    }
+
+    .mat-radio-label-content {
+      font-size: smaller;
+    }
+  }
+}

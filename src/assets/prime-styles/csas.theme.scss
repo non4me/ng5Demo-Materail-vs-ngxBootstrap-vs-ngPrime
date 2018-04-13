@@ -1,0 +1,135 @@
+@import "../styles/csas.palette";
+
+$fontFamily: Open Sans;
+$fontSize: 1em;
+$borderRadius: 0;
+$disabledOpacity: 0.35;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: #aed0ea;
+$headerBgColor: #deedf7;
+$headerTextColor: #222222;
+$headerFontWeight: bold;
+$headerIconTextColor: #222222;
+
+//Content
+$contentBorderWidth: 1px;
+$contentBorderColor: #dddddd;
+$contentBgColor: #f2f5f7;
+$contentTextColor: #362b36;
+
+//Default State
+$stateDefaultBorderWidth: 1px;
+$stateDefaultBorderColor: #aed0ea;
+$stateDefaultBgColor: #d7ebf9;
+$stateDefaultTextColor: #2779aa;
+
+//Active State
+$stateActiveBorderColor: #2694e8;
+$stateActiveBgColor: #3baae3;
+$stateActiveTextColor: #ffffff;
+
+//Highlight State
+$stateHighlightBorderColor: rgba(37, 119, 177, 0.32);
+$stateHighlightBgColor: rgba(145, 192, 201, 0.4);
+$stateHighlightTextColor: #363636;
+
+//Focus State
+$stateFocusBorderColor: #74b2e2;
+$stateFocusBgColor: #e4f1fb;
+$stateFocusTextColor: #0070a3;
+
+//Error State
+$stateErrorBorderColor: #cd0a0a;
+$stateErrorBgColor: #cd0a0a;
+$stateErrorTextColor: #ffffff;
+
+//Hover State
+$stateHoverBorderColor: #74b2e2;
+$stateHoverBgColor: #e4f1fb;
+$stateHoverTextColor: #0070a3;
+
+//Forms
+$inputBgColor: #ffffff;
+$inputTextColor: #222222;
+$invalidInputBorderColor: #cd0a0a;
+$inputGroupTextColor: #2779aa;
+
+@import "~primeng/resources/themes/_theme";
+
+/* Severity Buttons */
+/* Secondary */
+.ui-button.csas-button-secondary.ui-state-default,
+.ui-splitbutton.csas-button-secondary .ui-button.ui-state-default {
+  background-color: $g-background-4;
+  border-color: #cccccc;
+  color: $g-text-main;
+}
+
+.ui-button.csas-button-secondary:enabled:hover,
+.ui-button.csas-button-secondary:focus,
+.ui-splitbutton.csas-button-secondary .ui-button:enabled:hover,
+.ui-splitbutton.csas-button-secondary .ui-button:focus {
+  background-color: $g-background-3;
+  border-color: #cccccc;
+  color: $g-text-main;
+}
+
+.ui-button.csas-button-secondary:enabled:active,
+.ui-splitbutton.csas-button-secondary .ui-button:enabled:active  {
+  background-color: $g-background-1;
+  border-color: #cccccc;
+  color: $g-text-main;
+}
+
+/* Success */
+.ui-button.csas-button-success.ui-state-default,
+.ui-splitbutton.csas-button-success .ui-button.ui-state-default {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+  color: #ffffff;
+}
+
+.ui-button.csas-button-success:enabled:hover,
+.ui-button.csas-button-success:focus,
+.ui-splitbutton.csas-button-success .ui-button:enabled:hover,
+.ui-splitbutton.csas-button-success .ui-button:focus {
+  background-color: #4cae4c;
+  border-color: #5cb85c;
+}
+
+.ui-button.csas-button-success:enabled:active,
+.ui-splitbutton.csas-button-success .ui-button:enabled:active {
+  background-color: #449d44;
+  border-color: #5cb85c;
+}
+
+/* Info */
+.ui-button.csas-button-info.ui-state-default,
+.ui-splitbutton.csas-button-info .ui-button.ui-state-default {
+  background-color: $g-background-1;
+  border-color: $g-background-1;
+  color: #ffffff;
+}
+
+.ui-button.csas-button-info:enabled:hover,
+.ui-button.csas-button-info:focus,
+.ui-splitbutton.csas-button-info .ui-button:enabled:hover,
+.ui-splitbutton.csas-button-info .ui-button:focus {
+  background-color: $g-background-linear-0;
+  border-color: $g-background-linear-0;
+}
+
+.ui-button.csas-button-info:enabled:active,
+.ui-splitbutton.csas-button-info .ui-button:enabled:active {
+  background-color: $g-background-0;
+  border-color: $g-background-0;
+}
+
+
+.ui-widget.ui-button, .ui-button, p-dropdown.ui-state-default {
+  background-color: $g-background-0;
+  border-color: $g-background-0;
+  color: #f1f1f1;
+}

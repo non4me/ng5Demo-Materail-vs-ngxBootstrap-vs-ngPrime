@@ -1,0 +1,10 @@
+<div class="custom-modal">
+  <p mat-dialog-title>Hi {{ data.name }}</p>
+  <div mat-dialog-content>
+      <input pInputText type="text" [(ngModel)]="data.animal" placeholder="Send data to controler">
+  </div>
+  <p-footer>
+    <button pButton type="button" class="csas-button-secondary" (click)="onCancel()" label="No Thanks"></button>
+    <button pButton type="button" class="csas-button-info" (click)="onOk()" label="OK"></button>
+  </p-footer>
+</div>

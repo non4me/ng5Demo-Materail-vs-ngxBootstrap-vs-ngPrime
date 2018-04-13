@@ -1,0 +1,11 @@
+<div class="dbs-menu">
+    <div class="dbs-menu__item" *ngFor="let item of menu" [ngClass]="{'active': item?.active}">
+      <div class="dbs-menu__item-icon">
+        <i class="fa-lg {{ item.icon }}"></i>
+      </div>
+      <div class="dbs-menu__item-text">
+        {{ item.label }}
+      </div>
+    </div>
+  </div>
+  

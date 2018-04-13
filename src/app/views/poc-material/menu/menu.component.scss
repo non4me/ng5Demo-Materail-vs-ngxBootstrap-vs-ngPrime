@@ -1,0 +1,24 @@
+:host {
+  .dbs-menu {
+
+    &__item {
+      border-bottom: 1px solid #2577B1;
+      color: #2577B1;
+      cursor: pointer;
+
+      &.active {
+        color: #FFFFFF;
+        background-color: #2577B1;
+        cursor: default;
+
+        &:hover {
+          background-color: #2577B1;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(54, 117, 175, 0.13);
+      }
+    }
+  }
+}

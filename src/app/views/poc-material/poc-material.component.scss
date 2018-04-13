@@ -1,0 +1,59 @@
+:host /deep/ {
+  .poc-material {
+    padding: 10px;
+    color: #005292;
+
+    .mat-button.mat-primary {
+      border: 1px solid #005292;
+    }
+
+    .secondary {
+      background: #2577B1;
+      color: white;
+      border: 1px solid rgba(0, 0, 0, 0.54)
+    }
+
+    .mat-calendar {
+      height: 320px;
+      background-color: rgba(197, 202, 233, .3);
+    }
+
+    &__open-button {
+      text-wrap: none;
+      margin-top: 10px;
+    }
+
+    &__button-row {
+      text-align: right;
+    }
+
+    &__content-header {
+      padding: 10px 0 8px 0;
+      border-bottom: 1px solid;
+    }
+
+    &__icon-text {
+      margin-top: 2px;
+      font-size: larger;
+    }
+
+    &__content-subheader {
+      padding: 5px 0 5px 30px;
+
+      mat-icon {
+        vertical-align: text-top;
+      }
+
+      span {
+        vertical-align: middle;
+      }
+    }
+
+    &__info-box {
+      margin-top: 30px;
+      background: #FFFFFF;
+      border: 1px solid #005292;
+      padding: 10px;
+    }
+  }
+}

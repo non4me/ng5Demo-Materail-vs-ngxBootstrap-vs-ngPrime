@@ -1,0 +1,35 @@
+mat-datepicker-content.mat-datepicker-content {
+  background-color: #e8eef2;
+
+  .mat-calendar {
+    height: 330px;
+
+    &-header {
+      padding: 0 8px 0 8px;
+      background-color: $g-background-0;
+      color: #FFFFFF;
+    }
+
+    &-arrow {
+      border-top-color: #ffffffe0;
+    }
+
+    &-table-header {
+      color: black;
+    }
+
+    &-body-cell-content {
+      border-radius: 0;
+    }
+
+    &-body-selected {
+      background-color: $g-background-0;
+    }
+  }
+}
+
+svg.mat-datepicker-toggle-default-icon.ng-star-inserted {
+  width: 1.2em;
+  padding-bottom: 2px;
+  height: 1.6em;
+}

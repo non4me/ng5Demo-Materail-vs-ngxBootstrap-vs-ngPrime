@@ -1,0 +1,50 @@
+:host /deep/ {
+    .dbs-form {
+      padding-top: 20px;
+
+      &__period-title {
+        display: inline-block;
+        padding-bottom: 10px;
+        padding-top: 25px;
+      }
+
+      &__search-button {
+        margin-top: 90px;
+        background: #2577B1;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+      }
+
+      label {
+        vertical-align: sub;
+      }
+
+      input:not([type=radio]), .ui-inputgroup, .mat-form-field-infix {
+        width: 100%;
+      }
+
+      select, div.ui-dropdown {
+        width: 100% !important;
+
+        .ui-dropdown-item {
+          white-space: nowrap;
+        }
+      }
+
+      select {
+        border: 1px solid #aed0ea;
+        padding: 5px;
+      }
+
+      input[formcontrolname] {
+        border: 1px solid #aed0ea;
+        padding: 5px;
+      }
+
+      .ui-datepicker-trigger {
+        position: absolute;
+        margin-left: -27px;
+      }
+    }
+  }

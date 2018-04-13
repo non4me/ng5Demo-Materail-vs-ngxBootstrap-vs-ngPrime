@@ -1,0 +1,15 @@
+@import "../styles/csas.palette";
+
+.btn {
+  border-radius: 0;
+
+  &.btn-primary {
+    background-color: $g-background-0;
+  }
+
+  &.btn-secondary {
+    background-color: $g-background-4;
+    border-color: #cccccc;
+    color: $g-text-main;
+  }
+}

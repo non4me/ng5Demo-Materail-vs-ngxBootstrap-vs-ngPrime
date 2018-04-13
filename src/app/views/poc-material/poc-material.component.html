@@ -1,0 +1,49 @@
+<div class="poc-material" fxLayout="row" fxLayoutGap="50px">
+  <div fxFlex="20">
+    <dbs-menu></dbs-menu>
+    <button mat-raised-button color="gray" (click)="openDialog()" class="poc-material__open-button">
+      <mat-icon>open_in_browser</mat-icon>
+      Open modal
+    </button>
+  </div>
+  <div fxFlex="80" fxLayout="column">
+    <div fxLayout="row" class="poc-material__content-header">
+      <div fxFlex="20" class="poc-material__content-header--title" fxLayout="row" fxLayoutGap="5px"
+           fxFlexAlign="flex-end">
+        <div>
+          <mat-icon>history</mat-icon>
+        </div>
+        <div class="poc-material__icon-text"><strong>Transakční historie</strong></div>
+      </div>
+      <div class="poc-material__button-row" fxFlex="80" fxLayoutAlign="end" fxLayoutGap="10px">
+        <button color="primary" mat-button>Tran. historie</button>
+        <button class="secondary" mat-button>Výpis obratů</button>
+        <button color="primary" mat-button>Info o plateb. transa...</button>
+      </div>
+
+    </div>
+    <div class="poc-material__content-subheader">
+      <span><strong>Vyhledávání plateb</strong></span>
+    </div>
+    <div fxLayout="column">
+      <div>
+        <dbs-form (formUpdated)="formUpdated($event)"></dbs-form>
+      </div>
+
+      <div class="poc-material__info-box">
+        <div fxLayout="row">
+          <div>
+            <mat-icon>info</mat-icon>
+          </div>
+          <div class="poc-material__icon-text">
+            <strong>Informace o výpise obratu</strong>
+          </div>
+        </div>
+
+        <pre>
+{{ searchObject }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
