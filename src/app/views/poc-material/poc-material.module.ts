@@ -19,7 +19,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { PocMaterialComponent } from './poc-material.component';
 import { CustomModalComponent } from './custom-modal/custom-modal.component';
 
-import { CoreModule } from '@core/core.module';
 import { MenuComponent } from './menu/menu.component';
 import { FormComponent } from './form/form.component';
 
@@ -34,7 +33,6 @@ const routs: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    CoreModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
